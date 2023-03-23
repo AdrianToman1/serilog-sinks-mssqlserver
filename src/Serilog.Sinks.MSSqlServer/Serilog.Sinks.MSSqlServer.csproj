@@ -4,7 +4,7 @@
     <Description>A Serilog sink that writes events to Microsoft SQL Server</Description>
     <VersionPrefix>5.3.0</VersionPrefix>
     <Authors>Michiel van Oudheusden;Serilog Contributors</Authors>
-    <TargetFrameworks>netstandard2.0;net452;netcoreapp2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.0;net462</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Serilog.Sinks.MSSqlServer</AssemblyName>
@@ -65,17 +65,6 @@
     <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="2.0.0" />
     <Compile Include="Configuration\Extensions\Hybrid\**\*.cs" />
     <Compile Include="Configuration\Implementations\Microsoft.Extensions.Configuration\**\*.cs" />
-    <Compile Include="Configuration\Implementations\System.Configuration\**\*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-    <Compile Include="Configuration\Extensions\System.Configuration\**\*.cs" />
     <Compile Include="Configuration\Implementations\System.Configuration\**\*.cs" />
   </ItemGroup>
 

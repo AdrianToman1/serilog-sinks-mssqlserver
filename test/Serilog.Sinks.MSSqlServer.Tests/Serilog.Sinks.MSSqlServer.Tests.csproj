@@ -13,7 +13,7 @@
   -->
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net452</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.0;</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netstandard2.0</TargetFrameworks>
     <AssemblyName>Serilog.Sinks.MSSqlServer.Tests</AssemblyName>
     <AssemblyOriginatorKeyFile>../../assets/Serilog.snk</AssemblyOriginatorKeyFile>
@@ -44,15 +44,6 @@
     <!-- Show in VStudio, but MSBuild ignores these (indicates files are not code, non-published-content, etc.) -->
     <None Include="Configuration\**\*.*" />
     <!-- ItemGroups below with TFM conditions will re-include the compile targets -->
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
-    <Reference Include="System" />
-    <Reference Include="Microsoft.CSharp" />
-    <PackageReference Include="xunit" Version="2.4.1" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
-    <Compile Include="Configuration\Extensions\System.Configuration\**\*.cs" />
-    <Compile Include="Configuration\Implementations\System.Configuration\**\*.cs" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
